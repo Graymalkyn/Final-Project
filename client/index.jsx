@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import Header from './js/header.jsx';
+import ProdList from './js/prod-list.jsx';
+
 
 require("./scss/style.scss");
 
@@ -12,7 +14,13 @@ class App extends React.Component {
       <div>
         <Header />
 
-        <p>Paragraph is App component!</p>
+          <div className="container">
+
+
+            <ProdList/>
+
+          </div>
+
       </div>
     );
   }
