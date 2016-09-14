@@ -3,7 +3,6 @@ if (window.Etsy === undefined) window.Etsy = {};
 (function (Etsy){
 
   function start() {
-    console.log('hello');
 
     $.ajax({
       url: '/api/listings/active'
@@ -15,5 +14,5 @@ if (window.Etsy === undefined) window.Etsy = {};
   }
   Etsy.start = start;
 
-  
+
 })(window.Etsy);

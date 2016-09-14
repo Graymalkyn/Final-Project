@@ -6,13 +6,18 @@ var state = {
 }
 
 var store = {
-  callbacks: [],
+  listeners: [],
   actions: {}
 }
 
+store.addListener = function(listener) {
+  store.listeners.push(listener);
+}
+
+// console.log('store', store)
 store.change = function(){
-  console.log('store change', state);
-  store.callbacks.forEach(function(cb){
+  // console.log('store change', state);
+  store.listeners.forEach(function(cb){
     cb(store.getState());
   });
 }
@@ -23,17 +28,8 @@ store.getState = function() {
   };
 }
 
-
 store.actions.load = function() {
-  console.log('window', window);
-
-
-  // request('/api/listings/active', function(error, response, body){
-  //   if (!error && response.statusCode == 200) {
-  //     console.log(body);
-  //   }
-  // })
-
+  // console.log('window', window);
 
   $.ajax({
     url:'/api/listings/active',
@@ -43,8 +39,8 @@ store.actions.load = function() {
 
   .done(function(data){
     console.log('data', data);
-    data.results.forEach(function(newList){
-      state.name.push(newList);
+    data.results.forEach(function(newListing){
+      state.name.push(newListing);
     })
     store.change();
   });

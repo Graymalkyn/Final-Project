@@ -21557,6 +21557,12 @@
 	    _prodStore2.default.actions.load();
 	
 	    _this.state = _prodStore2.default.getState();
+	
+	    var self = _this;
+	    _prodStore2.default.addListener(function (state) {
+	      console.log('changed', state);
+	      self.setState(state);
+	    });
 	    return _this;
 	  }
 	
@@ -21564,15 +21570,37 @@
 	    key: 'render',
 	    value: function render() {
 	      console.log('this.state', this.state);
+	
+	      var newItem = [];
+	
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
 	          'div',
 	          null,
-	          'Name: ',
-	          this.state.name
+	          'Results: ',
+	          this.state.name.map(function (listStuff, i) {
+	            return _react2.default.createElement(
+	              'li',
+	              { listStuff: i },
+	              ' ',
+	              i + 1
+	            );
+	          })
 	        )
+	      );
+	
+	      // $(this.state.name).filter(function(user){
+	      //   if ('user_id' === '54614032'){
+	      //     newItem.push(user)
+	      //   }
+	      // });
+	
+	      return _react2.default.createElement(
+	        'ul',
+	        null,
+	        newItem
 	      );
 	    }
 	  }]);
@@ -21597,13 +21625,18 @@
 	};
 	
 	var store = {
-	  callbacks: [],
+	  listeners: [],
 	  actions: {}
 	};
 	
+	store.addListener = function (listener) {
+	  store.listeners.push(listener);
+	};
+	
+	// console.log('store', store)
 	store.change = function () {
-	  console.log('store change', state);
-	  store.callbacks.forEach(function (cb) {
+	  // console.log('store change', state);
+	  store.listeners.forEach(function (cb) {
 	    cb(store.getState());
 	  });
 	};
@@ -21615,22 +21648,15 @@
 	};
 	
 	store.actions.load = function () {
-	  console.log('window', window);
-	
-	  // request('/api/listings/active', function(error, response, body){
-	  //   if (!error && response.statusCode == 200) {
-	  //     console.log(body);
-	  //   }
-	  // })
-	
+	  // console.log('window', window);
 	
 	  $.ajax({
 	    url: '/api/listings/active',
 	    method: 'GET'
 	  }).done(function (data) {
 	    console.log('data', data);
-	    data.results.forEach(function (newList) {
-	      state.name.push(newList);
+	    data.results.forEach(function (newListing) {
+	      state.name.push(newListing);
 	    });
 	    store.change();
 	  });
