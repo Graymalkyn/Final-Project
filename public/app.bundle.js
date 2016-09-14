@@ -21576,7 +21576,6 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        'Results:',
 	        _react2.default.createElement(
 	          'ul',
 	          { className: 'list' },
@@ -21611,6 +21610,48 @@
 	                { id: 'currency_code' },
 	                'Currency Code: ',
 	                listings.currency_code
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { id: 'price' },
+	                'Price: ',
+	                listings.price,
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { id: 'quantity' },
+	                'Quantity: ',
+	                listings.quantity,
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { id: 'state' },
+	                'State: ',
+	                listings.state,
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { id: 'url' },
+	                'URL: ',
+	                listings.url,
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { id: 'when_made' },
+	                'When it was made: ',
+	                listings.when_made,
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { id: 'who_made' },
+	                'Who made it: ',
+	                listings.who_made,
+	                ' '
 	              )
 	            );
 	          })
@@ -31793,7 +31834,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n#app {\n  padding: 5px; }\n\nh1 {\n  font-size: 1.5em;\n  margin: 1.5em 0; }\n\nli {\n  padding: 5px;\n  margin: 5px;\n  background-color: #c7c7c7; }\n\nli div {\n  padding: 10px; }\n", "", {"version":3,"sources":["/./client/scss/client/scss/_reset.scss","/./client/scss/client/scss/style.scss"],"names":[],"mappings":"AAAA;;;EAGE;AAEF;;;;;;;;;;;;;EAaC,UAAU;EACV,WAAW;EACX,UAAU;EACV,gBAAgB;EAChB,cAAc;EACd,yBAAyB,EACzB;;AACD,iDAAiD;AACjD;;EAEC,eAAe,EACf;;AACD;EACC,eAAe,EACf;;AACD;EACC,iBAAiB,EACjB;;AACD;EACC,aAAa,EACb;;AACD;;EAEC,YAAY;EACZ,cAAc,EACd;;AACD;EACC,0BAA0B;EAC1B,kBAAkB,EAClB;;AC7CD;EACE,aAAa,EACd;;AAED;EACE,iBAAiB;EACjB,gBAAgB,EACjB;;AAED;EACE,aAAa;EACb,YAAY;EACZ,0BAAsB,EACvB;;AAED;EACE,cAAc,EACf","file":"style.scss","sourcesContent":["/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n","@import 'reset';\n\n#app {\n  padding: 5px;\n}\n\nh1 {\n  font-size: 1.5em;\n  margin: 1.5em 0;\n}\n\nli {\n  padding: 5px;\n  margin: 5px;\n  background-color: rgba(199, 199, 199, 1.0);\n}\n\nli div {\n  padding: 10px;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n#app {\n  padding: 5px; }\n\nheader {\n  overflow: auto; }\n\nheader img {\n  width: 75px; }\n\n.header-logo {\n  margin: 20px; }\n\nheader ul {\n  display: inline-block;\n  float: right; }\n\nheader li {\n  display: inline-block; }\n\nh1 {\n  font-family: serif;\n  color: #f56400;\n  text-align: center;\n  font-size: 2em;\n  margin: 1.5em 0; }\n\nbody {\n  background-color: #f5f5f1;\n  font-family: \"Graphik Web\",\"Arial\",\"Helvetica\",sans-serif; }\n\n.container {\n  width: 80%;\n  margin: 0 auto; }\n\nbody ul {\n  margin: 10px auto; }\n\nbody li {\n  border-bottom: 2px solid #dededb;\n  padding: 5px;\n  margin: 5px;\n  background-color: #fbfbf9;\n  width: 95%; }\n\nbody li div {\n  padding: 10px; }\n\n#title {\n  font-size: 1.5em; }\n", "", {"version":3,"sources":["/./client/scss/client/scss/_reset.scss","/./client/scss/client/scss/style.scss"],"names":[],"mappings":"AAAA;;;EAGE;AAEF;;;;;;;;;;;;;EAaC,UAAU;EACV,WAAW;EACX,UAAU;EACV,gBAAgB;EAChB,cAAc;EACd,yBAAyB,EACzB;;AACD,iDAAiD;AACjD;;EAEC,eAAe,EACf;;AACD;EACC,eAAe,EACf;;AACD;EACC,iBAAiB,EACjB;;AACD;EACC,aAAa,EACb;;AACD;;EAEC,YAAY;EACZ,cAAc,EACd;;AACD;EACC,0BAA0B;EAC1B,kBAAkB,EAClB;;AC7CD;EACE,aAAa,EACd;;AAED;EACE,eAAe,EAChB;;AAED;EACE,YAAY,EACb;;AAED;EACE,aAAa,EACd;;AAED;EACE,sBAAsB;EACtB,aAAa,EACd;;AAED;EACE,sBAAsB,EACvB;;AAED;EACE,mBAAmB;EACnB,eAAW;EACX,mBAAmB;EACnB,eAAe;EACf,gBAAgB,EACjB;;AAED;EACE,0BAAsB;EACtB,0DAA0D,EAC3D;;AAED;EACE,WAAW;EACX,eAAe,EAChB;;AAED;EACE,kBAAkB,EACnB;;AAED;EACE,iCAA6B;EAC7B,aAAa;EACb,YAAY;EACZ,0BAAsB;EACtB,WAAW,EACZ;;AAED;EACE,cAAc,EACf;;AAED;EACE,iBAAiB,EAClB","file":"style.scss","sourcesContent":["/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n","@import 'reset';\n\n#app {\n  padding: 5px;\n}\n\nheader {\n  overflow: auto;\n}\n\nheader img {\n  width: 75px;\n}\n\n.header-logo {\n  margin: 20px;\n}\n\nheader ul {\n  display: inline-block;\n  float: right;\n}\n\nheader li {\n  display: inline-block;\n}\n\nh1 {\n  font-family: serif;\n  color: rgba(245, 100, 0, 1.0);\n  text-align: center;\n  font-size: 2em;\n  margin: 1.5em 0;\n}\n\nbody {\n  background-color: rgba(245, 245, 241, 1.0);\n  font-family: \"Graphik Web\",\"Arial\",\"Helvetica\",sans-serif;\n}\n\n.container {\n  width: 80%;\n  margin: 0 auto;\n}\n\nbody ul {\n  margin: 10px auto;\n}\n\nbody li {\n  border-bottom: 2px solid rgba(222, 222, 219, 1.0);\n  padding: 5px;\n  margin: 5px;\n  background-color: rgba(251, 251, 249, 1.0);\n  width: 95%;\n}\n\nbody li div {\n  padding: 10px;\n}\n\n#title {\n  font-size: 1.5em;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 

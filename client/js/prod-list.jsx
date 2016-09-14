@@ -23,7 +23,7 @@ constructor() {
     var className = '';
 
     return (
-      <div>Results:
+      <div>
         <ul className="list">
           {this.state.name.map(function(listings, i){
           console.log('listings', listings);
@@ -33,6 +33,12 @@ constructor() {
                 <div id="listing_id">Listing ID#: {listings.listing_id} </div>
                 <div id="description">Description: {listings.description} </div>
                 <div id="currency_code">Currency Code: {listings.currency_code}</div>
+                <div id="price">Price: {listings.price} </div>
+                <div id="quantity">Quantity: {listings.quantity} </div>
+                <div id="state">State: {listings.state} </div>
+                <div id="url">URL: {listings.url} </div>
+                <div id="when_made">When it was made: {listings.when_made} </div>
+                <div id="who_made">Who made it: {listings.who_made} </div>
               </li>
             )
           })}
