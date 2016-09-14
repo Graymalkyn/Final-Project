@@ -11,37 +11,27 @@ constructor() {
   this.state = store.getState();
 
   var self = this;
+
   store.addListener(function(state){
-    console.log('changed', state)
+    // console.log('changed', state)
     self.setState(state);
   })
 };
 
   render() {
-    console.log('this.state', this.state);
 
-    var newItem = [];
-
+    var className = '';
     return (
-      <div>
-        <div>Results: {this.state.name.map(function(listStuff, i){
-            return (<li listStuff={i} > {i + 1}</li>)
+      <div>Results:
+        <ul className="list">
+          {this.state.name.map(function(listStuff, i){
+          console.log('listStuff', listStuff);
+            return (<li key={i}  > {listStuff.title}</li>)
           })}
-        </div>
+        </ul>
       </div>
     )
 
-    // $(this.state.name).filter(function(user){
-    //   if ('user_id' === '54614032'){
-    //     newItem.push(user)
-    //   }
-    // });
-
-    return (
-      <ul>
-        {newItem}
-      </ul>
-    )
   };
 };
 
