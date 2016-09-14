@@ -21,12 +21,20 @@ constructor() {
   render() {
 
     var className = '';
+
     return (
       <div>Results:
         <ul className="list">
-          {this.state.name.map(function(listStuff, i){
-          console.log('listStuff', listStuff);
-            return (<li key={i}  > {listStuff.title}</li>)
+          {this.state.name.map(function(listings, i){
+          console.log('listings', listings);
+            return (
+              <li key={i} >
+                <div id="title">Title: {listings.title} </div>
+                <div id="listing_id">Listing ID#: {listings.listing_id} </div>
+                <div id="description">Description: {listings.description} </div>
+                <div id="currency_code">Currency Code: {listings.currency_code}</div>
+              </li>
+            )
           })}
         </ul>
       </div>
