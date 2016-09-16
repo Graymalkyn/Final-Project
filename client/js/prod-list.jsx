@@ -29,16 +29,16 @@ constructor() {
           console.log('listings', listings);
             return (
               <li key={i} >
-                <div id="title">Title: {listings.title} </div>
-                <div id="listing_id">Listing ID#: {listings.listing_id} </div>
-                <div id="description">Description: {listings.description} </div>
-                <div id="currency_code">Currency Code: {listings.currency_code}</div>
-                <div id="price">Price: {listings.price} </div>
-                <div id="quantity">Quantity: {listings.quantity} </div>
-                <div id="state">State: {listings.state} </div>
-                <div id="url">URL: {listings.url} </div>
-                <div id="when_made">When it was made: {listings.when_made} </div>
-                <div id="who_made">Who made it: {listings.who_made} </div>
+                <div id="title"><strong>Title: </strong><a href={listings.url} id="url">{listings.title} </a></div>
+                <div id="listing_id"><strong>Listing ID#:</strong> {listings.listing_id} </div>
+                <div id="description"><strong>Description:</strong> {listings.description} </div>
+                <div id="currency_code"><strong>Currency Code:</strong> {listings.currency_code}</div>
+                <div id="price"><strong>Price:</strong> {listings.price} </div>
+                <div id="quantity"><strong>Quantity:</strong> {listings.quantity} </div>
+                <div id="state"><strong>State:</strong> {listings.state} </div>
+                <div id="when_made"><strong>When it was made:</strong> {listings.when_made} </div>
+                <div id="who_made"><strong>Who made it:</strong> {listings.who_made} </div>
+                <div id="user_id"><strong>User ID#:</strong> {listings.user_id} </div>
               </li>
             )
           })}

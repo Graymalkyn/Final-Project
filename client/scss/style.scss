@@ -4,8 +4,17 @@
   padding: 5px;
 }
 
+#title {
+  font-size: 1.5em;
+}
+
+strong {
+  font-weight: bold;
+}
+
 header {
   overflow: auto;
+  border-bottom: 2px solid rgba(222, 222, 219, 1.0);
 }
 
 header img {
@@ -17,12 +26,28 @@ header img {
 }
 
 header ul {
-  display: inline-block;
   float: right;
 }
 
+
 header li {
+  color: rgba(102, 102, 102, 1.0);
   display: inline-block;
+  font-size: .8em;
+  padding: 10px;
+  border-right: 1px solid rgba(222, 222, 219, 1.0);
+}
+
+header li:last-child {
+  border-right: none;
+}
+
+header li:visited {
+  text-decoration: none;
+}
+
+header li:hover {
+  color: black;
 }
 
 h1 {
@@ -43,22 +68,18 @@ body {
   margin: 0 auto;
 }
 
-body ul {
-  margin: 10px auto;
+.list {
+  margin: 30px auto;
 }
 
-body li {
+.list li {
   border-bottom: 2px solid rgba(222, 222, 219, 1.0);
   padding: 5px;
-  margin: 5px;
+  margin: 15px 0;
   background-color: rgba(251, 251, 249, 1.0);
   width: 95%;
 }
 
 body li div {
   padding: 10px;
-}
-
-#title {
-  font-size: 1.5em;
 }

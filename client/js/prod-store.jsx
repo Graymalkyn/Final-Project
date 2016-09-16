@@ -9,12 +9,12 @@ var store = {
   listeners: [],
   actions: {}
 }
+// console.log('store', store)
 
 store.addListener = function(listener) {
   store.listeners.push(listener);
 }
 
-// console.log('store', store)
 store.change = function(){
   // console.log('store change', state);
   store.listeners.forEach(function(cb){
