@@ -38,7 +38,7 @@ store.actions.load = function() {
 
 
   .done(function(data){
-    console.log('data', data);
+    // console.log('data', data);
     data.results.forEach(function(newListing){
       state.name.push(newListing);
     })

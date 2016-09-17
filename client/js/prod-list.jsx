@@ -20,33 +20,33 @@ constructor() {
 
   render() {
 
-    var className = '';
-
     return (
-      <div>
-        <ul className="list">
-          {this.state.name.map(function(listings, i){
-          console.log('listings', listings);
-            return (
-              <li key={i} >
-                <div id="title"><strong>Title: </strong><a href={listings.url} id="url">{listings.title} </a></div>
-                <div id="listing_id"><strong>Listing ID#:</strong> {listings.listing_id} </div>
-                <div id="description"><strong>Description:</strong> {listings.description} </div>
-                <div id="currency_code"><strong>Currency Code:</strong> {listings.currency_code}</div>
-                <div id="price"><strong>Price:</strong> {listings.price} </div>
-                <div id="quantity"><strong>Quantity:</strong> {listings.quantity} </div>
-                <div id="state"><strong>State:</strong> {listings.state} </div>
-                <div id="when_made"><strong>When it was made:</strong> {listings.when_made} </div>
-                <div id="who_made"><strong>Who made it:</strong> {listings.who_made} </div>
-                <div id="user_id"><strong>User ID#:</strong> {listings.user_id} </div>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+      <ul className="listing">
+        {this.state.name.map(function(listings, i){
+        // console.log('listings', listings);
+          return (
+            <li id="item-listing-box-1" key={i} >
+              <div id="title"><strong>Title:</strong> {listings.title} </div>
+              <div id="listing_id"><strong>Listing ID#:</strong> {listings.listing_id} </div>
+              <div id="description"><strong>Description:</strong> <div id="hidden-text"> {listings.description} </div></div>
+            <button id="reveal-button">Read More...</button>
+              <div id="price"><strong>Price:</strong> {listings.price} </div>
+              <div id="currency_code"><strong>Currency Code:</strong> {listings.currency_code}</div>
+              <div id="quantity"><strong>Quantity:</strong> {listings.quantity} </div>
+              <div id="when_made"><strong>When it was made:</strong> {listings.when_made} </div>
+              <div id="who_made"><strong>Who made it:</strong> {listings.who_made} </div>
+              <div id="user_id"><strong>User ID#:</strong> {listings.user_id} </div>
+              <div id="url"><strong>URL:</strong><a href={listings.url} id="url"> {listings.url} </a></div>
+            <button id="goToEtsy">Go to Etsy listing</button>
+            </li>
+          )
+        })}
+      </ul>
+
     )
 
   };
+
 };
 
 module.exports = ProdList;

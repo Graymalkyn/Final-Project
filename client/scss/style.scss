@@ -4,10 +4,6 @@
   padding: 5px;
 }
 
-#title {
-  font-size: 1.5em;
-}
-
 strong {
   font-weight: bold;
 }
@@ -19,14 +15,12 @@ header {
 
 header img {
   width: 75px;
-}
-
-.header-logo {
   margin: 20px;
 }
 
 header ul {
   float: right;
+  margin-top: 20px;
 }
 
 
@@ -42,11 +36,11 @@ header li:last-child {
   border-right: none;
 }
 
-header li:visited {
+header li a:visited {
   text-decoration: none;
 }
 
-header li:hover {
+header li a:hover {
   color: black;
 }
 
@@ -68,18 +62,116 @@ body {
   margin: 0 auto;
 }
 
-.list {
+.listing {
   margin: 30px auto;
 }
 
-.list li {
-  border-bottom: 2px solid rgba(222, 222, 219, 1.0);
+.listing li {
+  border: 10px solid rgba(228, 243, 217, 1.0);
   padding: 5px;
-  margin: 15px 0;
+  margin: 15px auto;
   background-color: rgba(251, 251, 249, 1.0);
   width: 95%;
 }
 
+body li {
+  overflow: auto;
+}
+
 body li div {
   padding: 10px;
+}
+
+#title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#price {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+button {
+  background-color: rgba(122, 193, 66, 1.0);
+  // border-top: 10px solid rgba(228, 243, 217, 1.0);
+  // border-left: none;
+  // border-bottom: 10px solid rgba(228, 243, 217, 1.0);
+  // border-right: none;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px;
+  width: 100%;
+}
+
+#price {
+  border-top: solid 2px rgba(222, 222, 219, 1.0);
+}
+
+#currency_code {
+  border-bottom: solid 2px rgba(222, 222, 219, 1.0);
+  font-size: .8em;
+}
+
+#hidden-text {
+  height: 55px;
+  overflow: hidden;
+  transition: 2s;
+}
+
+.appear {
+  height: 500px;
+}
+
+#quantity {
+  font-size: .8em;
+}
+
+#when_made {
+  font-size: .8em;
+}
+
+#who_made {
+  font-size: .8em;
+
+}
+
+#user_id {
+  font-size: .8em;
+
+}
+
+@media (max-width: 500px) {
+
+  header img {
+    width: 75px;
+    margin: 0px;
+  }
+
+
+  header {
+    border-bottom: 2px solid rgba(222, 222, 219, 1.0);
+  }
+
+
+  header ul {
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  header li {
+    display: block;
+    border-bottom: 1px solid rgba(222, 222, 219, 1.0);
+    border-right: none;
+  }
+
+  header li:last-child {
+    border-bottom: none;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+
 }

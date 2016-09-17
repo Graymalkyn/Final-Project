@@ -21508,13 +21508,13 @@
 	      return _react2.default.createElement(
 	        "header",
 	        null,
-	        _react2.default.createElement("img", { "class": "header-logo", href: "https://www.etsy.com/?ref=lgo", src: "/images/etsylogo@2x.20160609191624.png" }),
+	        _react2.default.createElement("img", { id: "header-logo", href: "https://www.etsy.com/?ref=lgo", src: "/images/etsylogo@2x.20160609191624.png" }),
 	        _react2.default.createElement(
 	          "ul",
 	          null,
 	          _react2.default.createElement(
 	            "li",
-	            { "class": "home" },
+	            { id: "home" },
 	            _react2.default.createElement(
 	              "a",
 	              { href: "https://www.etsy.com/?ref=hdr" },
@@ -21523,7 +21523,7 @@
 	          ),
 	          _react2.default.createElement(
 	            "li",
-	            { "class": "favorites" },
+	            { id: "favorites" },
 	            _react2.default.createElement(
 	              "a",
 	              { href: "https://www.etsy.com/people/Graymalkyn/favorites?ref=hdr" },
@@ -21532,7 +21532,7 @@
 	          ),
 	          _react2.default.createElement(
 	            "li",
-	            { "class": "your-shop" },
+	            { id: "your-shop" },
 	            _react2.default.createElement(
 	              "a",
 	              { href: "https://www.etsy.com/shop/Graymalkyn?ref=hdr_shop_menu" },
@@ -21541,7 +21541,7 @@
 	          ),
 	          _react2.default.createElement(
 	            "li",
-	            { "class": "cart" },
+	            { id: "cart" },
 	            _react2.default.createElement(
 	              "a",
 	              { href: "https://www.etsy.com/cart?ref=hdr" },
@@ -21612,144 +21612,154 @@
 	    key: 'render',
 	    value: function render() {
 	
-	      var className = '';
-	
 	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'ul',
-	          { className: 'list' },
-	          this.state.name.map(function (listings, i) {
-	            console.log('listings', listings);
-	            return _react2.default.createElement(
-	              'li',
-	              { key: i },
+	        'ul',
+	        { className: 'listing' },
+	        this.state.name.map(function (listings, i) {
+	          // console.log('listings', listings);
+	          return _react2.default.createElement(
+	            'li',
+	            { id: 'item-listing-box-1', key: i },
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'title' },
 	              _react2.default.createElement(
-	                'div',
-	                { id: 'title' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Title: '
-	                ),
-	                _react2.default.createElement(
-	                  'a',
-	                  { href: listings.url, id: 'url' },
-	                  listings.title,
-	                  ' '
-	                )
+	                'strong',
+	                null,
+	                'Title:'
 	              ),
+	              ' ',
+	              listings.title,
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'listing_id' },
 	              _react2.default.createElement(
-	                'div',
-	                { id: 'listing_id' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Listing ID#:'
-	                ),
-	                ' ',
-	                listings.listing_id,
-	                ' '
+	                'strong',
+	                null,
+	                'Listing ID#:'
 	              ),
+	              ' ',
+	              listings.listing_id,
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'description' },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'Description:'
+	              ),
+	              ' ',
 	              _react2.default.createElement(
 	                'div',
-	                { id: 'description' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Description:'
-	                ),
+	                { id: 'hidden-text' },
 	                ' ',
 	                listings.description,
 	                ' '
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'button',
+	              { id: 'reveal-button' },
+	              'Read More...'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'price' },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'Price:'
+	              ),
+	              ' ',
+	              listings.price,
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'currency_code' },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'Currency Code:'
+	              ),
+	              ' ',
+	              listings.currency_code
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'quantity' },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'Quantity:'
+	              ),
+	              ' ',
+	              listings.quantity,
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'when_made' },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'When it was made:'
+	              ),
+	              ' ',
+	              listings.when_made,
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'who_made' },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'Who made it:'
+	              ),
+	              ' ',
+	              listings.who_made,
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'user_id' },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'User ID#:'
+	              ),
+	              ' ',
+	              listings.user_id,
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'url' },
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'URL:'
 	              ),
 	              _react2.default.createElement(
-	                'div',
-	                { id: 'currency_code' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Currency Code:'
-	                ),
+	                'a',
+	                { href: listings.url, id: 'url' },
 	                ' ',
-	                listings.currency_code
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { id: 'price' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Price:'
-	                ),
-	                ' ',
-	                listings.price,
-	                ' '
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { id: 'quantity' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Quantity:'
-	                ),
-	                ' ',
-	                listings.quantity,
-	                ' '
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { id: 'state' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'State:'
-	                ),
-	                ' ',
-	                listings.state,
-	                ' '
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { id: 'when_made' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'When it was made:'
-	                ),
-	                ' ',
-	                listings.when_made,
-	                ' '
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { id: 'who_made' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Who made it:'
-	                ),
-	                ' ',
-	                listings.who_made,
-	                ' '
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { id: 'user_id' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'User ID#:'
-	                ),
-	                ' ',
-	                listings.user_id,
+	                listings.url,
 	                ' '
 	              )
-	            );
-	          })
-	        )
+	            ),
+	            _react2.default.createElement(
+	              'button',
+	              { id: 'goToEtsy' },
+	              'Go to Etsy listing'
+	            )
+	          );
+	        })
 	      );
 	    }
 	  }]);
@@ -21803,7 +21813,7 @@
 	    url: '/api/listings/active',
 	    method: 'GET'
 	  }).done(function (data) {
-	    console.log('data', data);
+	    // console.log('data', data);
 	    data.results.forEach(function (newListing) {
 	      state.name.push(newListing);
 	    });
@@ -31928,7 +31938,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n#app {\n  padding: 5px; }\n\n#title {\n  font-size: 1.5em; }\n\nstrong {\n  font-weight: bold; }\n\nheader {\n  overflow: auto;\n  border-bottom: 2px solid #dededb; }\n\nheader img {\n  width: 75px; }\n\n.header-logo {\n  margin: 20px; }\n\nheader ul {\n  float: right; }\n\nheader li {\n  color: #666666;\n  display: inline-block;\n  font-size: .8em;\n  padding: 10px;\n  border-right: 1px solid #dededb; }\n\nheader li:last-child {\n  border-right: none; }\n\nheader li:visited {\n  text-decoration: none; }\n\nheader li:hover {\n  color: black; }\n\nh1 {\n  font-family: serif;\n  color: #f56400;\n  text-align: center;\n  font-size: 2em;\n  margin: 1.5em 0; }\n\nbody {\n  background-color: #f5f5f1;\n  font-family: \"Graphik Web\",\"Arial\",\"Helvetica\",sans-serif; }\n\n.container {\n  width: 80%;\n  margin: 0 auto; }\n\n.list {\n  margin: 30px auto; }\n\n.list li {\n  border-bottom: 2px solid #dededb;\n  padding: 5px;\n  margin: 15px 0;\n  background-color: #fbfbf9;\n  width: 95%; }\n\nbody li div {\n  padding: 10px; }\n", "", {"version":3,"sources":["/./client/scss/client/scss/_reset.scss","/./client/scss/client/scss/style.scss"],"names":[],"mappings":"AAAA;;;EAGE;AAEF;;;;;;;;;;;;;EAaC,UAAU;EACV,WAAW;EACX,UAAU;EACV,gBAAgB;EAChB,cAAc;EACd,yBAAyB,EACzB;;AACD,iDAAiD;AACjD;;EAEC,eAAe,EACf;;AACD;EACC,eAAe,EACf;;AACD;EACC,iBAAiB,EACjB;;AACD;EACC,aAAa,EACb;;AACD;;EAEC,YAAY;EACZ,cAAc,EACd;;AACD;EACC,0BAA0B;EAC1B,kBAAkB,EAClB;;AC7CD;EACE,aAAa,EACd;;AAED;EACE,iBAAiB,EAClB;;AAED;EACE,kBAAkB,EACnB;;AAED;EACE,eAAe;EACf,iCAA6B,EAC9B;;AAED;EACE,YAAY,EACb;;AAED;EACE,aAAa,EACd;;AAED;EACE,aAAa,EACd;;AAGD;EACE,eAAW;EACX,sBAAsB;EACtB,gBAAgB;EAChB,cAAc;EACd,gCAA4B,EAC7B;;AAED;EACE,mBAAmB,EACpB;;AAED;EACE,sBAAsB,EACvB;;AAED;EACE,aAAa,EACd;;AAED;EACE,mBAAmB;EACnB,eAAW;EACX,mBAAmB;EACnB,eAAe;EACf,gBAAgB,EACjB;;AAED;EACE,0BAAsB;EACtB,0DAA0D,EAC3D;;AAED;EACE,WAAW;EACX,eAAe,EAChB;;AAED;EACE,kBAAkB,EACnB;;AAED;EACE,iCAA6B;EAC7B,aAAa;EACb,eAAe;EACf,0BAAsB;EACtB,WAAW,EACZ;;AAED;EACE,cAAc,EACf","file":"style.scss","sourcesContent":["/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n","@import 'reset';\n\n#app {\n  padding: 5px;\n}\n\n#title {\n  font-size: 1.5em;\n}\n\nstrong {\n  font-weight: bold;\n}\n\nheader {\n  overflow: auto;\n  border-bottom: 2px solid rgba(222, 222, 219, 1.0);\n}\n\nheader img {\n  width: 75px;\n}\n\n.header-logo {\n  margin: 20px;\n}\n\nheader ul {\n  float: right;\n}\n\n\nheader li {\n  color: rgba(102, 102, 102, 1.0);\n  display: inline-block;\n  font-size: .8em;\n  padding: 10px;\n  border-right: 1px solid rgba(222, 222, 219, 1.0);\n}\n\nheader li:last-child {\n  border-right: none;\n}\n\nheader li:visited {\n  text-decoration: none;\n}\n\nheader li:hover {\n  color: black;\n}\n\nh1 {\n  font-family: serif;\n  color: rgba(245, 100, 0, 1.0);\n  text-align: center;\n  font-size: 2em;\n  margin: 1.5em 0;\n}\n\nbody {\n  background-color: rgba(245, 245, 241, 1.0);\n  font-family: \"Graphik Web\",\"Arial\",\"Helvetica\",sans-serif;\n}\n\n.container {\n  width: 80%;\n  margin: 0 auto;\n}\n\n.list {\n  margin: 30px auto;\n}\n\n.list li {\n  border-bottom: 2px solid rgba(222, 222, 219, 1.0);\n  padding: 5px;\n  margin: 15px 0;\n  background-color: rgba(251, 251, 249, 1.0);\n  width: 95%;\n}\n\nbody li div {\n  padding: 10px;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n#app {\n  padding: 5px; }\n\nstrong {\n  font-weight: bold; }\n\nheader {\n  overflow: auto;\n  border-bottom: 2px solid #dededb; }\n\nheader img {\n  width: 75px;\n  margin: 20px; }\n\nheader ul {\n  float: right;\n  margin-top: 20px; }\n\nheader li {\n  color: #666666;\n  display: inline-block;\n  font-size: .8em;\n  padding: 10px;\n  border-right: 1px solid #dededb; }\n\nheader li:last-child {\n  border-right: none; }\n\nheader li a:visited {\n  text-decoration: none; }\n\nheader li a:hover {\n  color: black; }\n\nh1 {\n  font-family: serif;\n  color: #f56400;\n  text-align: center;\n  font-size: 2em;\n  margin: 1.5em 0; }\n\nbody {\n  background-color: #f5f5f1;\n  font-family: \"Graphik Web\",\"Arial\",\"Helvetica\",sans-serif; }\n\n.container {\n  width: 80%;\n  margin: 0 auto; }\n\n.listing {\n  margin: 30px auto; }\n\n.listing li {\n  border: 10px solid #e4f3d9;\n  padding: 5px;\n  margin: 15px auto;\n  background-color: #fbfbf9;\n  width: 95%; }\n\nbody li {\n  overflow: auto; }\n\nbody li div {\n  padding: 10px; }\n\n#title {\n  font-size: 1.5em;\n  font-weight: bold; }\n\n#price {\n  font-size: 1.5em;\n  font-weight: bold; }\n\nbutton {\n  background-color: #7ac142;\n  color: white;\n  font-size: 1.2em;\n  padding: 10px;\n  width: 100%; }\n\n#price {\n  border-top: solid 2px #dededb; }\n\n#currency_code {\n  border-bottom: solid 2px #dededb;\n  font-size: .8em; }\n\n#hidden-text {\n  height: 55px;\n  overflow: hidden;\n  transition: 2s; }\n\n.appear {\n  height: 500px; }\n\n#quantity {\n  font-size: .8em; }\n\n#when_made {\n  font-size: .8em; }\n\n#who_made {\n  font-size: .8em; }\n\n#user_id {\n  font-size: .8em; }\n\n@media (max-width: 500px) {\n  header img {\n    width: 75px;\n    margin: 0px; }\n  header {\n    border-bottom: 2px solid #dededb; }\n  header ul {\n    text-align: center;\n    margin-top: 5px; }\n  header li {\n    display: block;\n    border-bottom: 1px solid #dededb;\n    border-right: none; }\n  header li:last-child {\n    border-bottom: none; }\n  h1 {\n    text-align: left; } }\n", "", {"version":3,"sources":["/./client/scss/client/scss/_reset.scss","/./client/scss/client/scss/style.scss"],"names":[],"mappings":"AAAA;;;EAGE;AAEF;;;;;;;;;;;;;EAaC,UAAU;EACV,WAAW;EACX,UAAU;EACV,gBAAgB;EAChB,cAAc;EACd,yBAAyB,EACzB;;AACD,iDAAiD;AACjD;;EAEC,eAAe,EACf;;AACD;EACC,eAAe,EACf;;AACD;EACC,iBAAiB,EACjB;;AACD;EACC,aAAa,EACb;;AACD;;EAEC,YAAY;EACZ,cAAc,EACd;;AACD;EACC,0BAA0B;EAC1B,kBAAkB,EAClB;;AC7CD;EACE,aAAa,EACd;;AAED;EACE,kBAAkB,EACnB;;AAED;EACE,eAAe;EACf,iCAA6B,EAC9B;;AAED;EACE,YAAY;EACZ,aAAa,EACd;;AAED;EACE,aAAa;EACb,iBAAiB,EAClB;;AAGD;EACE,eAAW;EACX,sBAAsB;EACtB,gBAAgB;EAChB,cAAc;EACd,gCAA4B,EAC7B;;AAED;EACE,mBAAmB,EACpB;;AAED;EACE,sBAAsB,EACvB;;AAED;EACE,aAAa,EACd;;AAED;EACE,mBAAmB;EACnB,eAAW;EACX,mBAAmB;EACnB,eAAe;EACf,gBAAgB,EACjB;;AAED;EACE,0BAAsB;EACtB,0DAA0D,EAC3D;;AAED;EACE,WAAW;EACX,eAAe,EAChB;;AAED;EACE,kBAAkB,EACnB;;AAED;EACE,2BAAuB;EACvB,aAAa;EACb,kBAAkB;EAClB,0BAAsB;EACtB,WAAW,EACZ;;AAED;EACE,eAAe,EAChB;;AAED;EACE,cAAc,EACf;;AAED;EACE,iBAAiB;EACjB,kBAAkB,EACnB;;AAED;EACE,iBAAiB;EACjB,kBAAkB,EACnB;;AAED;EACE,0BAAsB;EAKtB,aAAa;EACb,iBAAiB;EACjB,cAAc;EACd,YAAY,EACb;;AAED;EACE,8BAA0B,EAC3B;;AAED;EACE,iCAA6B;EAC7B,gBAAgB,EACjB;;AAED;EACE,aAAa;EACb,iBAAiB;EACjB,eAAe,EAChB;;AAED;EACE,cAAc,EACf;;AAED;EACE,gBAAgB,EACjB;;AAED;EACE,gBAAgB,EACjB;;AAED;EACE,gBAAgB,EAEjB;;AAED;EACE,gBAAgB,EAEjB;;AAED;EAEE;IACE,YAAY;IACZ,YAAY,EACb;EAGD;IACE,iCAA6B,EAC9B;EAGD;IACE,mBAAmB;IACnB,gBAAgB,EACjB;EAED;IACE,eAAe;IACf,iCAA6B;IAC7B,mBAAmB,EACpB;EAED;IACE,oBAAoB,EACrB;EAED;IACE,iBAAiB,EAClB,EAAA","file":"style.scss","sourcesContent":["/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n","@import 'reset';\n\n#app {\n  padding: 5px;\n}\n\nstrong {\n  font-weight: bold;\n}\n\nheader {\n  overflow: auto;\n  border-bottom: 2px solid rgba(222, 222, 219, 1.0);\n}\n\nheader img {\n  width: 75px;\n  margin: 20px;\n}\n\nheader ul {\n  float: right;\n  margin-top: 20px;\n}\n\n\nheader li {\n  color: rgba(102, 102, 102, 1.0);\n  display: inline-block;\n  font-size: .8em;\n  padding: 10px;\n  border-right: 1px solid rgba(222, 222, 219, 1.0);\n}\n\nheader li:last-child {\n  border-right: none;\n}\n\nheader li a:visited {\n  text-decoration: none;\n}\n\nheader li a:hover {\n  color: black;\n}\n\nh1 {\n  font-family: serif;\n  color: rgba(245, 100, 0, 1.0);\n  text-align: center;\n  font-size: 2em;\n  margin: 1.5em 0;\n}\n\nbody {\n  background-color: rgba(245, 245, 241, 1.0);\n  font-family: \"Graphik Web\",\"Arial\",\"Helvetica\",sans-serif;\n}\n\n.container {\n  width: 80%;\n  margin: 0 auto;\n}\n\n.listing {\n  margin: 30px auto;\n}\n\n.listing li {\n  border: 10px solid rgba(228, 243, 217, 1.0);\n  padding: 5px;\n  margin: 15px auto;\n  background-color: rgba(251, 251, 249, 1.0);\n  width: 95%;\n}\n\nbody li {\n  overflow: auto;\n}\n\nbody li div {\n  padding: 10px;\n}\n\n#title {\n  font-size: 1.5em;\n  font-weight: bold;\n}\n\n#price {\n  font-size: 1.5em;\n  font-weight: bold;\n}\n\nbutton {\n  background-color: rgba(122, 193, 66, 1.0);\n  // border-top: 10px solid rgba(228, 243, 217, 1.0);\n  // border-left: none;\n  // border-bottom: 10px solid rgba(228, 243, 217, 1.0);\n  // border-right: none;\n  color: white;\n  font-size: 1.2em;\n  padding: 10px;\n  width: 100%;\n}\n\n#price {\n  border-top: solid 2px rgba(222, 222, 219, 1.0);\n}\n\n#currency_code {\n  border-bottom: solid 2px rgba(222, 222, 219, 1.0);\n  font-size: .8em;\n}\n\n#hidden-text {\n  height: 55px;\n  overflow: hidden;\n  transition: 2s;\n}\n\n.appear {\n  height: 500px;\n}\n\n#quantity {\n  font-size: .8em;\n}\n\n#when_made {\n  font-size: .8em;\n}\n\n#who_made {\n  font-size: .8em;\n\n}\n\n#user_id {\n  font-size: .8em;\n\n}\n\n@media (max-width: 500px) {\n\n  header img {\n    width: 75px;\n    margin: 0px;\n  }\n\n\n  header {\n    border-bottom: 2px solid rgba(222, 222, 219, 1.0);\n  }\n\n\n  header ul {\n    text-align: center;\n    margin-top: 5px;\n  }\n\n  header li {\n    display: block;\n    border-bottom: 1px solid rgba(222, 222, 219, 1.0);\n    border-right: none;\n  }\n\n  header li:last-child {\n    border-bottom: none;\n  }\n\n  h1 {\n    text-align: left;\n  }\n\n\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
