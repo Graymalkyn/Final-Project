@@ -32,7 +32,7 @@ store.actions.load = function() {
   // console.log('window', window);
 
   $.ajax({
-    url:'/api/listings/active',
+    url:'/api/users/shopListings',
     method: 'GET'
   })
 

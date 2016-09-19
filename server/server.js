@@ -10,13 +10,24 @@ var apiKey = process.env.ETSY_KEY;
 
 app.get('/api/listings/active', function(req,res){
 
-  request('https://openapi.etsy.com/v2/listings/active?api_key=' + apiKey, '&user_id=93078486', function (error, response, body){
+  request('https://openapi.etsy.com/v2/listings/active?api_key=' + apiKey, function (error, response, body){
     if (!error && response.statusCode ==200){
       res.setHeader('Content-Type', 'application/json');
       res.send(body);
     }
   });
 });
+
+app.get('/api/users/shopListings', function(req,res){
+
+  request('https://openapi.etsy.com/v2/shops/Graymalkyn/listings/active?api_key=' + apiKey, function (error, response, body){
+    if (!error && response.statusCode ==200){
+      res.setHeader('Content-Type', 'application/json');
+      res.send(body);
+    }
+  });
+});
+
 
 app.get('/api/users', function(req,res){
 
@@ -30,7 +41,7 @@ app.get('/api/users', function(req,res){
 
 app.get('/api/shop', function(req,res){
 
-  request('https://openapi.etsy.com/v2/shops?api_key=' + apiKey + '&shop_name=Graymalkyn', function (error, response, body){
+  request('https://openapi.etsy.com/v2/shops/Graymalkyn?api_key=' + apiKey, function (error, response, body){
     if (!error && response.statusCode ==200){
       res.setHeader('Content-Type', 'application/json');
       res.send(body);
@@ -38,15 +49,18 @@ app.get('/api/shop', function(req,res){
   });
 });
 
-app.get('/api/users/findAllUsers', function(req,res){
+// app.get('/api/users/findAllUsers', function(req,res){
+//
+//   request('https://openapi.etsy.com/v2/users?api_key=' + apiKey + '&keywords=Mark%20Shuler', function (error, response, body){
+//     if (!error && response.statusCode ==200){
+//       res.setHeader('Content-Type', 'application/json');
+//       res.send(body);
+//     }
+//   });
+// });
 
-  request('https://openapi.etsy.com/v2/users?api_key=' + apiKey + '&keywords=Mark%20Shuler', function (error, response, body){
-    if (!error && response.statusCode ==200){
-      res.setHeader('Content-Type', 'application/json');
-      res.send(body);
-    }
-  });
-});
+
+
 
 
 app.listen(5000, function() {
