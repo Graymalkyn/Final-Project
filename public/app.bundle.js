@@ -97,21 +97,6 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'container' },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'app'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/ProdList' },
-	            'ProdList'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/detail/' },
-	            'Detail'
-	          ),
 	          this.props.children
 	        )
 	      );
@@ -21538,7 +21523,11 @@
 	      return _react2.default.createElement(
 	        "header",
 	        null,
-	        _react2.default.createElement("img", { id: "header-logo", href: "https://www.etsy.com/?ref=lgo", src: "/images/etsylogo@2x.20160609191624.png" }),
+	        _react2.default.createElement(
+	          "a",
+	          { href: "https://www.etsy.com/?ref=hdr" },
+	          _react2.default.createElement("img", { id: "header-logo", src: "/images/etsylogo@2x.20160609191624.png" })
+	        ),
 	        _react2.default.createElement(
 	          "ul",
 	          null,
@@ -21566,7 +21555,7 @@
 	            _react2.default.createElement(
 	              "a",
 	              { href: "https://www.etsy.com/shop/Graymalkyn?ref=hdr_shop_menu" },
-	              "Your Shop"
+	              "My Etsy Shop"
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -21648,7 +21637,7 @@
 	        'ul',
 	        { className: 'listing' },
 	        this.state.name.map(function (listings, i) {
-	          console.log('listings', listings);
+	          // console.log('listings', listings);
 	          return _react2.default.createElement(
 	            'li',
 	            { id: 'item-listing-box-1', key: i },
@@ -21681,18 +21670,6 @@
 	              ),
 	              ' ',
 	              listings.listing_id,
-	              ' '
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { id: 'description' },
-	              _react2.default.createElement(
-	                'strong',
-	                null,
-	                'Description:'
-	              ),
-	              ' ',
-	              listings.description,
 	              ' '
 	            ),
 	            _react2.default.createElement(
@@ -27432,25 +27409,26 @@
 	  }
 	
 	  _createClass(Detail, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var listingID = Number(this.props.params.index);
+	      console.log('listing_id', listingID);
+	      var stateObj = _prodStore2.default.copyState();
+	      console.log('stateObj', stateObj);
+	      var dude = stateObj.listings[listingID];
+	      console.log('dude', dude);
+	      this.setState(dude);
+	    }
+	  }, {
 	    key: 'render',
-	
-	
-	    // componentDidMount() {
-	    //   var id = Number(this.props.params.index);
-	    //   var stateObj = store.copyState();
-	    //   var dude = stateObj.characters[id];
-	    //   this.setState(dude);
-	    // }
-	
-	
 	    value: function render() {
-	      // console.log('detail state is what?', this.state);
+	      console.log('detail state is what?', this.state);
 	
 	      if (this.state === null) {
 	        return _react2.default.createElement(
 	          'div',
 	          null,
-	          'Loading Item...'
+	          'Loading item...'
 	        );
 	      }
 	
@@ -27461,7 +27439,7 @@
 	          'ul',
 	          { className: 'listing' },
 	          this.state.name.map(function (listings, i) {
-	            console.log('listings', listings);
+	            // console.log('listings', listings);
 	            return _react2.default.createElement(
 	              'li',
 	              { id: 'item-listing-box-1', key: i },

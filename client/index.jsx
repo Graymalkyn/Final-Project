@@ -18,9 +18,6 @@ class App extends React.Component {
 
           <div className="container">
 
-            <p>app</p>
-            <Link to={'/ProdList'}>ProdList</Link>
-            <Link to={'/detail/'}>Detail</Link>
 
             {this.props.children}
           </div>

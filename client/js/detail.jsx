@@ -4,20 +4,22 @@ import store from './prod-store.jsx';
 
 class Detail extends React.Component {
 
-  // componentDidMount() {
-  //   var id = Number(this.props.params.index);
-  //   var stateObj = store.copyState();
-  //   var dude = stateObj.characters[id];
-  //   this.setState(dude);
-  // }
-
+  componentDidMount() {
+    var listingID = Number(this.props.params.index);
+    console.log('listing_id', listingID);
+    var stateObj = store.copyState();
+    console.log('stateObj', stateObj);
+    var dude = stateObj.listings[listingID];
+    console.log('dude', dude);
+    this.setState(dude);
+  }
 
 
   render() {
-    // console.log('detail state is what?', this.state);
+    console.log('detail state is what?', this.state);
 
     if (this.state === null) {
-      return (<div>Loading Item...</div>)
+      return (<div>Loading item...</div>)
     }
 
 
@@ -25,7 +27,7 @@ class Detail extends React.Component {
       <div>
         <ul className="listing">
           {this.state.name.map(function(listings, i){
-          console.log('listings', listings);
+          // console.log('listings', listings);
             return (
               <li id="item-listing-box-1" key={i} >
                 <div id="image"><strong></strong> <img src={listings.Images[0].url_170x135} /></div>
