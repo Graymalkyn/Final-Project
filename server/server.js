@@ -8,15 +8,6 @@ console.log('process.env', process.env);
 
 var apiKey = process.env.ETSY_KEY;
 
-app.get('/api/listings/active', function(req,res){
-
-  request('https://openapi.etsy.com/v2/listings/active?includes=Images(url_75x75)&api_key=' + apiKey, function (error, response, body){
-    if (!error && response.statusCode ==200){
-      res.setHeader('Content-Type', 'application/json');
-      res.send(body);
-    }
-  });
-});
 
 app.get('/api/users/shopListings', function(req,res){
 
@@ -49,9 +40,24 @@ app.get('/api/shop', function(req,res){
   });
 });
 
+app.get('/api/listings', function(req,res){
+
+  request('https://openapi.etsy.com/v2/listings/478934593?api_key=' + apiKey, function (error, response, body){
+    if (!error && response.statusCode ==200){
+      res.setHeader('Content-Type', 'application/json');
+      res.send(body);
+    }
+  });
+});
+
+
+//********************************
+
+// Below used for testing and reference.
+
 // app.get('/api/users/findAllUsers', function(req,res){
 //
-//   request('https://openapi.etsy.com/v2/users?api_key=' + apiKey + '&keywords=Mark%20Shuler', function (error, response, body){
+//   request('https://openapi.etsy.com/v2/users?keywords=Mark%20Shuler&api_key=' + apiKey + , function (error, response, body){
 //     if (!error && response.statusCode ==200){
 //       res.setHeader('Content-Type', 'application/json');
 //       res.send(body);
@@ -59,7 +65,17 @@ app.get('/api/shop', function(req,res){
 //   });
 // });
 
+// app.get('/api/listings/active', function(req,res){
+//
+//   request('https://openapi.etsy.com/v2/listings/active?includes=Images(url_75x75)&api_key=' + apiKey, function (error, response, body){
+//     if (!error && response.statusCode ==200){
+//       res.setHeader('Content-Type', 'application/json');
+//       res.send(body);
+//     }
+//   });
+// });
 
+//********************************
 
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import store from './prod-store.jsx';
+import { Link } from 'react-router'
 
 class ProdList extends React.Component{
 
@@ -32,7 +33,7 @@ constructor() {
               <div id="description"><strong>Description:</strong> {listings.description} </div>
               <div id="price"><strong>Price:</strong> {listings.price} </div>
               <div id="url"><strong>URL:</strong><a href={listings.url} id="url"> {listings.url} </a></div>
-            <button id="goToEtsy">See Full Listing</button>
+            <button> <Link to={'/detail/' + listings.listing_id}>See Full Listing</Link></button>
             </li>
           )
         })}

@@ -1,0 +1,166 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+#app {
+  padding: 5px; }
+
+strong {
+  font-weight: bold; }
+
+header {
+  overflow: auto;
+  border-bottom: 2px solid #dededb; }
+
+header img {
+  width: 75px;
+  margin: 20px; }
+
+header ul {
+  float: right;
+  margin-top: 20px; }
+
+header li {
+  color: #666666;
+  display: inline-block;
+  font-size: .8em;
+  padding: 10px;
+  border-right: 1px solid #dededb; }
+
+header li:last-child {
+  border-right: none; }
+
+header li a:visited {
+  text-decoration: none; }
+
+header li a:hover {
+  color: black; }
+
+h1 {
+  font-family: serif;
+  color: #f56400;
+  text-align: center;
+  font-size: 4em;
+  margin: 1.5em 0; }
+
+body {
+  background-color: #f5f5f1;
+  font-family: "Graphik Web","Arial","Helvetica",sans-serif; }
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto; }
+
+.listing {
+  margin: 30px auto; }
+
+.listing li {
+  border: 10px solid #e4f3d9;
+  padding: 5px;
+  margin: 15px auto;
+  background-color: #fbfbf9;
+  width: 95%; }
+
+body li {
+  overflow: auto; }
+
+body li div {
+  padding: 10px; }
+
+#title {
+  font-size: 1.5em;
+  font-weight: bold; }
+
+#price {
+  font-size: 1.5em;
+  font-weight: bold; }
+
+button {
+  background-color: #7ac142;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px;
+  width: 100%; }
+
+#price {
+  border-top: solid 2px #dededb; }
+
+#currency_code {
+  border-bottom: solid 2px #dededb;
+  font-size: .8em; }
+
+#quantity {
+  font-size: .8em; }
+
+#when_made {
+  font-size: .8em; }
+
+#who_made {
+  font-size: .8em; }
+
+#user_id {
+  font-size: .8em; }
+
+@media (max-width: 500px) {
+  header img {
+    width: 75px;
+    margin: 0px; }
+  header {
+    border-bottom: 2px solid #dededb; }
+  header ul {
+    text-align: center;
+    margin-top: 5px; }
+  header li {
+    display: block;
+    border-bottom: 1px solid #dededb;
+    border-right: none; }
+  header li:last-child {
+    border-bottom: none; }
+  h1 {
+    text-align: left; } }
+
+/*# sourceMappingURL=style.css.map*/
