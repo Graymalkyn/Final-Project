@@ -48,7 +48,7 @@ h1 {
   font-family: serif;
   color: rgba(245, 100, 0, 1.0);
   text-align: center;
-  font-size: 2em;
+  font-size: 4em;
   margin: 1.5em 0;
 }
 
@@ -58,9 +58,11 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  overflow: auto;
 }
+
 
 .listing {
   margin: 30px auto;

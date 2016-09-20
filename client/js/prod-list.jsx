@@ -23,16 +23,16 @@ constructor() {
     return (
       <ul className="listing">
         {this.state.name.map(function(listings, i){
-        // console.log('listings', listings);
+        console.log('listings', listings);
           return (
             <li id="item-listing-box-1" key={i} >
+              <div id="image"><strong></strong> <img src={listings.Images[0].url_170x135} /></div>
               <div id="title"><strong>Title:</strong> {listings.title} </div>
               <div id="listing_id"><strong>Listing ID#:</strong> {listings.listing_id} </div>
               <div id="description"><strong>Description:</strong> {listings.description} </div>
               <div id="price"><strong>Price:</strong> {listings.price} </div>
-              <div id="when_made"><strong>When it was made:</strong> {listings.when_made} </div>
               <div id="url"><strong>URL:</strong><a href={listings.url} id="url"> {listings.url} </a></div>
-            <button id="goToEtsy">Go to Etsy listing</button>
+            <button id="goToEtsy">See Full Listing</button>
             </li>
           )
         })}

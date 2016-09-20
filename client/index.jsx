@@ -16,8 +16,9 @@ class App extends React.Component {
 
           <div className="container">
 
+            <ProdList />
 
-            <ProdList/>
+
 
           </div>
 
