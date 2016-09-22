@@ -1,10 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-
 import Header from './js/header.jsx';
 import ProdList from './js/prod-list.jsx';
 import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router'
-
 import Detail from './js/detail.jsx';
 
 require("./scss/style.scss");
@@ -16,13 +14,13 @@ class App extends React.Component {
       <div>
         <Header />
 
-          <div className="container">
-
-
+          <div className="container-jsx">
             {this.props.children}
           </div>
 
+
       </div>
+
     );
   }
 }
