@@ -21524,11 +21524,6 @@
 	        "header",
 	        null,
 	        _react2.default.createElement(
-	          "a",
-	          { href: "https://www.etsy.com/" },
-	          _react2.default.createElement("img", { id: "header-logo", src: "/images/etsylogo@2x.20160609191624.png" })
-	        ),
-	        _react2.default.createElement(
 	          "ul",
 	          null,
 	          _react2.default.createElement(
@@ -21567,6 +21562,11 @@
 	              "My Cart"
 	            )
 	          )
+	        ),
+	        _react2.default.createElement(
+	          "a",
+	          { href: "https://www.etsy.com/" },
+	          _react2.default.createElement("img", { className: "header-logo", src: "/images/etsylogo@2x.20160609191624.png" })
 	        ),
 	        _react2.default.createElement(
 	          "h1",
@@ -21634,55 +21634,68 @@
 	    value: function render() {
 	
 	      return _react2.default.createElement(
-	        'ul',
-	        { className: 'listing' },
-	        this.state.name.map(function (listings, i) {
-	          console.log('listings', listings);
-	          return _react2.default.createElement(
-	            'li',
-	            { id: 'item-listing', key: i },
-	            _react2.default.createElement(
-	              'div',
-	              { id: 'image' },
-	              _react2.default.createElement('strong', null),
-	              ' ',
-	              _react2.default.createElement('img', { src: listings.Images[0].url_170x135 })
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'title' },
-	              _react2.default.createElement(
-	                'strong',
-	                null,
-	                'Title:'
-	              ),
-	              ' ',
-	              listings.title,
-	              ' '
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'price' },
-	              _react2.default.createElement(
-	                'strong',
-	                null,
-	                'Price:'
-	              ),
-	              ' ',
-	              listings.price,
-	              ' '
-	            ),
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/detail/' + listings.listing_id },
+	        'div',
+	        { className: 'prod-container' },
+	        _react2.default.createElement(
+	          'ul',
+	          { className: 'prod-list' },
+	          this.state.name.map(function (listings, i) {
+	            return _react2.default.createElement(
+	              'li',
+	              { className: 'prod-list-item', key: i },
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'full-listing-button' },
-	                'See Full Listing'
+	                { className: 'prod-image' },
+	                _react2.default.createElement('strong', null),
+	                ' ',
+	                _react2.default.createElement('img', { src: listings.Images[0].url_170x135 })
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'title' },
+	                _react2.default.createElement(
+	                  'strong',
+	                  null,
+	                  'Title:'
+	                ),
+	                ' ',
+	                listings.title,
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'description' },
+	                _react2.default.createElement(
+	                  'strong',
+	                  null,
+	                  'Description:'
+	                ),
+	                listings.description
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'price' },
+	                _react2.default.createElement(
+	                  'strong',
+	                  null,
+	                  'Price:'
+	                ),
+	                ' $',
+	                listings.price,
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/detail/' + listings.listing_id },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'full-listing-button' },
+	                  'See Full Listing'
+	                )
 	              )
-	            )
-	          );
-	        })
+	            );
+	          })
+	        )
 	      );
 	    }
 	  }]);
@@ -37543,12 +37556,12 @@
 	          { id: 'detail-left-column' },
 	          _react2.default.createElement(
 	            'div',
-	            null,
+	            { className: 'detail-image' },
 	            _react2.default.createElement('img', { src: this.state.Images[0].url_570xN })
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'detail-description' },
+	            { className: 'description' },
 	            _react2.default.createElement(
 	              'strong',
 	              null,
@@ -37596,7 +37609,7 @@
 	              null,
 	              'Price:'
 	            ),
-	            ' ',
+	            ' $',
 	            this.state.price
 	          ),
 	          _react2.default.createElement(
@@ -37609,6 +37622,60 @@
 	            ),
 	            ' ',
 	            this.state.currency_code
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'strong',
+	              null,
+	              'Who Made this item?'
+	            ),
+	            ' ',
+	            this.state.who_made
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'strong',
+	              null,
+	              'When was it made?'
+	            ),
+	            ' ',
+	            this.state.when_made
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'dimensions' },
+	            'Height: ',
+	            this.state.item_height,
+	            ' ',
+	            this.state.item_dimensions_unit
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'dimensions' },
+	            'Width: ',
+	            this.state.item_width,
+	            ' ',
+	            this.state.item_dimensions_unit
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'dimensions' },
+	            'Length: ',
+	            this.state.item_length,
+	            ' ',
+	            this.state.item_dimensions_unit
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            'Weight: ',
+	            this.state.item_weight,
+	            ' ',
+	            this.state.item_weight_units
 	          ),
 	          _react2.default.createElement(
 	            'a',

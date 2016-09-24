@@ -22,20 +22,21 @@ constructor() {
   render() {
 
     return (
-      <ul className="listing">
-        {this.state.name.map(function(listings, i){
-        console.log('listings', listings);
-          return (
-            <li id="item-listing" key={i} >
-              <div id="image"><strong></strong> <img src={listings.Images[0].url_170x135} /></div>
-              <div className="title"><strong>Title:</strong> {listings.title} </div>
-              <div className="price"><strong>Price:</strong> {listings.price} </div>
-              <Link to={'/detail/' + listings.listing_id}><div className="full-listing-button">See Full Listing</div></Link>
-            </li>
-          )
-        })}
-      </ul>
-
+      <div className="prod-container">
+        <ul className="prod-list">
+          {this.state.name.map(function(listings, i){
+            return (
+              <li className="prod-list-item" key={i} >
+                <div className="prod-image"><strong></strong> <img src={listings.Images[0].url_170x135} /></div>
+                <div className="title"><strong>Title:</strong> {listings.title} </div>
+                <div className="description"><strong>Description:</strong>{listings.description}</div>
+                <div className="price"><strong>Price:</strong> ${listings.price} </div>
+                <Link to={'/detail/' + listings.listing_id}><div className="full-listing-button">See Full Listing</div></Link>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     );
 
   }

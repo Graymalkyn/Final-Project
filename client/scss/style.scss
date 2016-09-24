@@ -1,6 +1,6 @@
 @import 'reset';
 
-// ********* overlap **************
+// ********* shared **************
 #app {
   padding: 5px;
 }
@@ -15,6 +15,14 @@
   font-size: 1.5em;
   font-weight: bold;
 }
+
+.description {
+  border-top: 2px solid rgba(222, 222, 219, 1.0);
+  line-height: 1.5em;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
 
 body {
   background-color: rgba(245, 245, 241, 1.0);
@@ -38,6 +46,14 @@ a {
   text-decoration: none;
 }
 
+.image-div {
+  max-width: 550px;
+}
+
+img {
+  max-width: 100%;
+}
+
 // ************* header ***************
 
 header {
@@ -45,19 +61,18 @@ header {
   border-bottom: 2px solid rgba(222, 222, 219, 1.0);
 }
 
-header img {
-  width: 75px;
-  margin: 20px;
-}
 
 header ul {
-  float: right;
+  float: left;
   margin-top: 20px;
 }
 
+header li a {
+  color: rgba(102, 102, 102, 1.0);
+
+}
 
 header li {
-  color: rgba(102, 102, 102, 1.0);
   display: inline-block;
   font-size: .8em;
   padding: 10px;
@@ -80,30 +95,48 @@ h1 {
   margin: 20px 0;
 }
 
+.header-logo {
+  float: left;
+}
+
+.header-logo {
+  width: 75px;
+  margin: 20px;
+}
 
 
 // ************prod-list page ********************
 
+.prod-container {
+}
 
+.prod-image img {
+  border: 2px solid rgba(222, 222, 219, 1.0);
+}
 
-
-.listing {
+.prod-list {
   margin: 30px auto;
 }
 
-.listing li {
+.prod-list-item {
   border: 8px solid rgba(228, 243, 217, 1.0);
   border-radius: 5px;
-  padding: 5px;
+  display: inline-block;
   margin: 15px auto;
   background-color: rgba(251, 251, 249, 1.0);
-  width: 95%;
+  width: 48%;
+  height: 390px;
 }
 
 
-body li div {
+.prod-list-item  div {
   padding: 10px;
 }
+
+.prod-list-item div:last-child {
+  padding: 10px 0;
+}
+
 
 .full-listing-button {
   background-color: rgba(122, 193, 66, 1.0);
@@ -118,6 +151,13 @@ body li div {
 
 
 // ************ detail page ***************
+
+.dimensions {
+  display: inline-block;
+  width: 33% auto;
+  text-align: center;
+}
+
 
 
 
@@ -147,12 +187,10 @@ body li div {
 
 }
 
-.detail-description {
-  border-top: 2px solid rgba(222, 222, 219, 1.0);
-  line-height: 1.5em;
-  margin-top: 20px;
-  padding-top: 20px;
+.detail-image {
+  border: 2px solid rgba(222, 222, 219, 1.0);
 }
+
 
 .back-link {
   background-color: rgba(122, 193, 66, 1.0);
@@ -178,9 +216,24 @@ body li div {
 footer {
   color: rgba(159, 159, 158, 1.0);
   padding: 30px;
+  text-align: center;
+}
+
+@media (max-width: 725px) {
+
+  .columns {
+    column-count: 1;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
 }
 
 @media (max-width: 500px) {
+
+
 
   header img {
     width: 75px;

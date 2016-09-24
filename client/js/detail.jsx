@@ -30,15 +30,21 @@ class Detail extends React.Component {
     return (
       <div id="detail-container">
         <div id="detail-left-column">
-          <div><img src={this.state.Images[0].url_570xN} /></div>
-          <div className="detail-description"><strong>Description:</strong> {this.state.description}</div>
+          <div className="detail-image"><img src={this.state.Images[0].url_570xN} /></div>
+          <div className="description"><strong>Description:</strong> {this.state.description}</div>
         </div>
         <div id="detail-right-column">
           <a href="http://localhost:5000/#/"><div className="back-link">Back to Selection Page</div></a>
           <div className="title"><strong>Title:</strong> {this.state.title} </div>
           <div>Listing ID#: {this.state.listing_id}</div>
-          <div className="price"><strong>Price:</strong> {this.state.price}</div>
+          <div className="price"><strong>Price:</strong> ${this.state.price}</div>
           <div><strong>Currency Type:</strong> {this.state.currency_code}</div>
+          <div><strong>Who Made this item?</strong> {this.state.who_made}</div>
+          <div><strong>When was it made?</strong> {this.state.when_made}</div>
+          <div className="dimensions">Height: {this.state.item_height} {this.state.item_dimensions_unit}</div>
+          <div className="dimensions">Width: {this.state.item_width} {this.state.item_dimensions_unit}</div>
+          <div className="dimensions">Length: {this.state.item_length} {this.state.item_dimensions_unit}</div>
+          <div>Weight: {this.state.item_weight} {this.state.item_weight_units}</div>
           <a href={"https://www.etsy.com/listing/"  + this.state.listing_id}><div className="goto-link">Go to item on Etsy page</div></a>
 
         </div>

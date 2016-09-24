@@ -5,7 +5,6 @@ class Header extends React.Component {
   render () {
     return (
       <header>
-        <a href="https://www.etsy.com/"><img id="header-logo"  src="/images/etsylogo@2x.20160609191624.png" /></a>
 
         <ul>
           <li id="home"><a href="http://localhost:5000/#/">Home</a></li>
@@ -14,8 +13,12 @@ class Header extends React.Component {
           <li id="cart"><a href="https://www.etsy.com/cart?ref=hdr">My Cart</a></li>
         </ul>
 
+        <a href="https://www.etsy.com/"><img className="header-logo"  src="/images/etsylogo@2x.20160609191624.png" /></a>
+
 
         <h1>Mark's Etsy Listings!</h1>
+
+
       </header>
     );
   }
