@@ -21524,49 +21524,48 @@
 	        "header",
 	        null,
 	        _react2.default.createElement(
-	          "ul",
+	          "div",
 	          null,
 	          _react2.default.createElement(
-	            "li",
-	            { id: "home" },
+	            "ul",
+	            null,
 	            _react2.default.createElement(
-	              "a",
-	              { href: "http://localhost:5000/#/" },
-	              "Home"
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "li",
-	            { id: "favorites" },
+	              "li",
+	              { className: "home" },
+	              _react2.default.createElement(
+	                "a",
+	                { href: "http://localhost:5000/#/" },
+	                "Home"
+	              )
+	            ),
 	            _react2.default.createElement(
-	              "a",
-	              { href: "https://www.etsy.com/people/Graymalkyn/favorites?ref=hdr" },
-	              "Favorites"
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "li",
-	            { id: "your-shop" },
+	              "li",
+	              { className: "favorites" },
+	              _react2.default.createElement(
+	                "a",
+	                { href: "https://www.etsy.com/people/Graymalkyn/favorites?ref=hdr" },
+	                "Favorites"
+	              )
+	            ),
 	            _react2.default.createElement(
-	              "a",
-	              { href: "https://www.etsy.com/shop/Graymalkyn?ref=hdr_shop_menu" },
-	              "My Etsy Shop"
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "li",
-	            { id: "cart" },
+	              "li",
+	              { className: "your-shop" },
+	              _react2.default.createElement(
+	                "a",
+	                { href: "https://www.etsy.com/shop/Graymalkyn?ref=hdr_shop_menu" },
+	                "My Etsy Shop"
+	              )
+	            ),
 	            _react2.default.createElement(
-	              "a",
-	              { href: "https://www.etsy.com/cart?ref=hdr" },
-	              "My Cart"
+	              "li",
+	              { className: "cart" },
+	              _react2.default.createElement(
+	                "a",
+	                { href: "https://www.etsy.com/cart?ref=hdr" },
+	                "My Cart"
+	              )
 	            )
 	          )
-	        ),
-	        _react2.default.createElement(
-	          "a",
-	          { href: "https://www.etsy.com/" },
-	          _react2.default.createElement("img", { className: "header-logo", src: "/images/etsylogo@2x.20160609191624.png" })
 	        ),
 	        _react2.default.createElement(
 	          "h1",
@@ -37548,12 +37547,17 @@
 	        );
 	      }
 	
+	      // if (this.state.who_made === "i_did") {
+	      //   changeText.who_made("I made this item.");
+	      // }
+	
+	
 	      return _react2.default.createElement(
 	        'div',
-	        { id: 'detail-container' },
+	        { className: 'detail-container' },
 	        _react2.default.createElement(
 	          'div',
-	          { id: 'detail-left-column' },
+	          { className: 'detail-left-column' },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'detail-image' },
@@ -37573,7 +37577,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { id: 'detail-right-column' },
+	          { className: 'detail-right-column' },
 	          _react2.default.createElement(
 	            'a',
 	            { href: 'http://localhost:5000/#/' },
@@ -37597,7 +37601,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            null,
+	            { className: 'listing-id' },
 	            'Listing ID#: ',
 	            this.state.listing_id
 	          ),
@@ -37647,7 +37651,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'dimensions' },
+	            null,
 	            'Height: ',
 	            this.state.item_height,
 	            ' ',
@@ -37655,7 +37659,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'dimensions' },
+	            null,
 	            'Width: ',
 	            this.state.item_width,
 	            ' ',
@@ -37663,7 +37667,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'dimensions' },
+	            null,
 	            'Length: ',
 	            this.state.item_length,
 	            ' ',

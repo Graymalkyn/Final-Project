@@ -48,14 +48,27 @@ table {
 #app {
   padding: 5px; }
 
+header h1 {
+  font-family: "Libre Baskerville", serif;
+  color: #f56400;
+  text-align: center;
+  font-size: 4em;
+  margin: 30px 0 20px 0;
+  padding: 20px;
+  clear: left; }
+
+.listing-id {
+  border-bottom: solid 2px #dededb; }
+
 .title {
   font-size: 1.5em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 20px; }
 
 .price {
-  border-top: solid 2px #dededb;
-  font-size: 1.5em;
-  font-weight: bold; }
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-top: 20px; }
 
 .description {
   border-top: 2px solid #dededb;
@@ -65,17 +78,11 @@ table {
 
 body {
   background-color: #f5f5f1;
-  font-family: "Graphik Web","Arial","Helvetica",sans-serif; }
+  font-family: "Cabin", sans-serif; }
 
 strong {
   font-weight: bold;
   font-size: 1.1em; }
-
-.container-html {
-  border-bottom: 2px solid #dededb;
-  width: 90%;
-  margin: 0 auto;
-  overflow: auto; }
 
 a {
   text-decoration: none; }
@@ -87,12 +94,11 @@ img {
   max-width: 100%; }
 
 header {
-  overflow: auto;
   border-bottom: 2px solid #dededb; }
 
 header ul {
   float: left;
-  margin-top: 20px; }
+  margin: 0 10px; }
 
 header li a {
   color: #666666; }
@@ -109,20 +115,6 @@ header li:last-child {
 header li a:hover {
   color: black; }
 
-h1 {
-  font-family: serif;
-  color: #f56400;
-  text-align: center;
-  font-size: 4em;
-  margin: 20px 0; }
-
-.header-logo {
-  float: left; }
-
-.header-logo {
-  width: 75px;
-  margin: 20px; }
-
 .prod-image img {
   border: 2px solid #dededb; }
 
@@ -130,13 +122,13 @@ h1 {
   margin: 30px auto; }
 
 .prod-list-item {
-  border: 8px solid #e4f3d9;
+  border: 8px solid green;
   border-radius: 5px;
   display: inline-block;
-  margin: 15px auto;
+  margin: 15px 5px;
   background-color: #fbfbf9;
-  width: 48%;
-  height: 390px; }
+  width: 47%;
+  height: 410px; }
 
 .prod-list-item div {
   padding: 10px; }
@@ -153,33 +145,33 @@ h1 {
   text-align: center;
   text-decoration: none; }
 
-.dimensions {
-  display: inline-block;
-  width: 33% auto;
-  text-align: center; }
+.prod-list-item .description {
+  height: 58px;
+  text-overflow: ellipsis;
+  overflow: scroll; }
 
-#detail-container {
+.detail-container {
   background-color: white;
   width: 90%;
   margin: 0 auto;
   overflow: auto;
   padding: 3%; }
 
-#detail-left-column {
+.detail-left-column {
   float: left;
-  width: 45%;
+  width: 48%;
   margin-bottom: 20px; }
 
-#detail-right-column {
+.detail-right-column {
   border: 8px solid #e4f3d9;
   border-radius: 5px;
   float: right;
-  width: 40%; }
+  width: 48%; }
 
-#detail-right-column div {
+.detail-right-column div {
   padding: 10px 5px; }
 
-.detail-image {
+.detail-left-column img {
   border: 2px solid #dededb; }
 
 .back-link {
@@ -203,28 +195,39 @@ footer {
   padding: 30px;
   text-align: center; }
 
-@media (max-width: 725px) {
-  .columns {
-    column-count: 1; }
-  h1 {
-    text-align: left; } }
+footer img {
+  padding: 10px;
+  width: 75px; }
+
+@media (max-width: 1135px) {
+  header h1 {
+    font-size: 3em; } }
+
+@media (max-width: 980px) {
+  .prod-list-item {
+    width: 95%; } }
+
+@media (max-width: 807px) {
+  .detail-left-column {
+    width: 95%; }
+  .detail-right-column {
+    width: 95%; } }
 
 @media (max-width: 500px) {
-  header img {
-    width: 75px;
-    margin: 0px; }
-  header {
-    border-bottom: 2px solid #dededb; }
   header ul {
-    text-align: center;
     margin-top: 5px; }
   header li {
     display: block;
     border-bottom: 1px solid #dededb;
-    border-right: none; }
+    border-right: none;
+    padding: 5px; }
   header li:last-child {
     border-bottom: none; }
-  h1 {
-    text-align: left; } }
+  header h1 {
+    margin: 20px 0;
+    font-size: 2em;
+    clear: none; }
+  header {
+    margin: 0; } }
 
 /*# sourceMappingURL=style.css.map*/
