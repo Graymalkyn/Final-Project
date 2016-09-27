@@ -2,7 +2,7 @@
   "description": "",
   "scripts": {
     "server": "node server/server.js",
-    "start": "node server/server.js",
+    "start": "node server/server.js"
     "webpack": "webpack --watch"
   },
   "dependencies": {
