@@ -8,7 +8,7 @@ console.log('process.env', process.env);
 
 var apiKey = process.env.ETSY_KEY;
 
-var port = process.env.PORT || 5500
+var port = process.env.PORT || 5500;
 
 
 app.get('/api/users/shopListings', function(req,res){
@@ -81,6 +81,6 @@ app.get('/api/listings', function(req,res){
 
 
 
-app.listen(5000, function() {
-  console.log('listening on port 5000.');
+app.listen(port, function() {
+  console.log('listening on port', port);
 });
