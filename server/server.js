@@ -8,6 +8,8 @@ console.log('process.env', process.env);
 
 var apiKey = process.env.ETSY_KEY;
 
+var port = process.env.PORT || 5500
+
 
 app.get('/api/users/shopListings', function(req,res){
 

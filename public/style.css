@@ -122,13 +122,13 @@ header li a:hover {
   margin: 30px auto; }
 
 .prod-list-item {
-  border: 8px solid green;
+  border: 8px solid #e4f3d9;
   border-radius: 5px;
-  display: inline-block;
   margin: 15px 5px;
   background-color: #fbfbf9;
   width: 47%;
-  height: 410px; }
+  height: 424px;
+  float: left; }
 
 .prod-list-item div {
   padding: 10px; }
@@ -147,6 +147,11 @@ header li a:hover {
 
 .prod-list-item .description {
   height: 58px;
+  text-overflow: ellipsis;
+  overflow: scroll; }
+
+.prod-list-item .title {
+  height: 16px;
   text-overflow: ellipsis;
   overflow: scroll; }
 
@@ -191,9 +196,11 @@ header li a:hover {
   text-align: center; }
 
 footer {
+  border-top: 1px solid #9f9f9e;
   color: #9f9f9e;
   padding: 30px;
-  text-align: center; }
+  text-align: center;
+  clear: both; }
 
 footer img {
   padding: 10px;
@@ -205,6 +212,8 @@ footer img {
 
 @media (max-width: 980px) {
   .prod-list-item {
+    height: auto; }
+  .prod-list-item {
     width: 95%; } }
 
 @media (max-width: 807px) {
@@ -213,7 +222,7 @@ footer img {
   .detail-right-column {
     width: 95%; } }
 
-@media (max-width: 500px) {
+@media (max-width: 460px) {
   header ul {
     margin-top: 5px; }
   header li {

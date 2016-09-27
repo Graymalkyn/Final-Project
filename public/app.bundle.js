@@ -21652,11 +21652,6 @@
 	              _react2.default.createElement(
 	                'div',
 	                { className: 'title' },
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Title:'
-	                ),
 	                ' ',
 	                listings.title,
 	                ' '
