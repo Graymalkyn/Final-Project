@@ -146,15 +146,16 @@ header li a:hover {
   text-decoration: none; }
 
 .prod-list-item .description {
+  margin: 20px 10px;
   height: 58px;
-  text-overflow: ellipsis;
+  text-overflow: clip;
   overflow: scroll; }
 
 .prod-list-item .title {
-  height: 16px;
+  height: 19px;
   line-height: 1.5em;
   text-overflow: ellipsis;
-  overflow: scroll; }
+  overflow: auto; }
 
 .detail-container {
   background-color: white;
