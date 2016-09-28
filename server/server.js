@@ -17,6 +17,9 @@ app.get('/api/users/shopListings', function(req,res){
       res.setHeader('Content-Type', 'application/json');
       res.send(body);
     }
+    else {
+      console.log(error, 'status code', response.statusCode);
+    }
   });
 });
 
@@ -28,6 +31,10 @@ app.get('/api/users', function(req,res){
       res.setHeader('Content-Type', 'application/json');
       res.send(body);
     }
+    else {
+      console.log(error, 'status code', response.statusCode);
+    }
+
   });
 });
 
@@ -38,6 +45,10 @@ app.get('/api/shop', function(req,res){
       res.setHeader('Content-Type', 'application/json');
       res.send(body);
     }
+    else {
+      console.log(error, 'status code', response.statusCode);
+    }
+
   });
 });
 
@@ -48,6 +59,10 @@ app.get('/api/listings', function(req,res){
       res.setHeader('Content-Type', 'application/json');
       res.send(body);
     }
+    else {
+      console.log(error, 'status code', response.statusCode);
+    }
+
   });
 });
 
