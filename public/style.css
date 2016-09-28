@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/
+@import url(//fonts.googleapis.com/css?family=Calibri);@import url(//fonts.googleapis.com/css?family=LibreBaskerville);/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -78,7 +78,7 @@ header h1 {
 
 body {
   background-color: #f5f5f1;
-  font-family: "Cabin", sans-serif; }
+  font-family: "Calibri", sans-serif; }
 
 strong {
   font-weight: bold;
@@ -152,6 +152,7 @@ header li a:hover {
 
 .prod-list-item .title {
   height: 16px;
+  line-height: 1.5em;
   text-overflow: ellipsis;
   overflow: scroll; }
 
@@ -196,7 +197,7 @@ header li a:hover {
   text-align: center; }
 
 footer {
-  border-top: 1px solid #9f9f9e;
+  border-top: 2px solid #dededb;
   color: #9f9f9e;
   padding: 30px;
   text-align: center;

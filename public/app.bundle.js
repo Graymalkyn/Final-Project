@@ -21662,7 +21662,7 @@
 	                _react2.default.createElement(
 	                  'strong',
 	                  null,
-	                  'Description:'
+	                  'Description: '
 	                ),
 	                listings.description
 	              ),
@@ -21672,7 +21672,7 @@
 	                _react2.default.createElement(
 	                  'strong',
 	                  null,
-	                  'Price:'
+	                  'Price: '
 	                ),
 	                ' $',
 	                listings.price,

@@ -1,4 +1,8 @@
 @import 'reset';
+@import url(//fonts.googleapis.com/css?family=Calibri);
+@import url(//fonts.googleapis.com/css?family=LibreBaskerville);
+
+
 
 // ********* shared **************
 
@@ -44,7 +48,7 @@ header h1 {
 
 body {
   background-color: rgba(245, 245, 241, 1.0);
-  font-family: "Cabin", sans-serif;
+  font-family: "Calibri", sans-serif;
 }
 
 
@@ -147,6 +151,7 @@ header li a:hover {
 
 .prod-list-item .title {
   height: 16px;
+  line-height: 1.5em;
   text-overflow: ellipsis;
   overflow: scroll;
 }
@@ -209,7 +214,7 @@ header li a:hover {
 // ************ footer *******************
 
 footer {
-  border-top: 1px solid rgba(159, 159, 158, 1.0);
+  border-top: 2px solid rgba(222, 222, 219, 1.0);
   color: rgba(159, 159, 158, 1.0);
   padding: 30px;
   text-align: center;
