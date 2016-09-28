@@ -7,6 +7,8 @@ app.use(express.static('public'));
 console.log('process.env', process.env);
 
 var apiKey = process.env.ETSY_KEY;
+console.log(apiKey, 'apiKey');
+
 
 
 
