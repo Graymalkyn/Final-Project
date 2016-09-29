@@ -21534,7 +21534,7 @@
 	              { className: "home" },
 	              _react2.default.createElement(
 	                "a",
-	                { target: "_blank", href: "http://https://mark-shuler-etsy.herokuapp.com/#/" },
+	                { target: "_blank", href: "https://mark-shuler-etsy.herokuapp.com/#/" },
 	                "Home"
 	              )
 	            ),
@@ -37627,7 +37627,7 @@
 	          { className: 'detail-right-column' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: 'http://https://mark-shuler-etsy.herokuapp.com/#/' },
+	            { href: 'https://mark-shuler-etsy.herokuapp.com/#/' },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'back-link' },
