@@ -4,7 +4,6 @@ var request = require('request');
 
 app.use(express.static('public'));
 
-console.log('process.env', process.env);
 
 var apiKey = process.env.ETSY_KEY;
 

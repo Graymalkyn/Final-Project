@@ -5,19 +5,32 @@ import { Link } from 'react-router'
 class ProdList extends React.Component{
 
 constructor() {
+  console.log('step 1');
   super();
-
-  store.actions.load();
 
   this.state = store.getState();
 
-  var self = this;
 
-  store.addListener(function(state){
-    // console.log('changed', state)
-    self.setState(state);
-  });
 }
+
+componentWillMount(){
+  console.log('step2', this.state);
+  store.actions.load();
+  // var self = this;
+
+  this.listeningFunc = (state) => {
+    this.setState(state);
+  }
+
+  store.addListener(this.listeningFunc);
+
+}
+
+componentWillUnmount(){
+  store.removeListener(this.listeningFunc);
+
+}
+
 
   render() {
 

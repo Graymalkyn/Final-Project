@@ -7,16 +7,42 @@ class Detail extends React.Component {
 
   componentDidMount() {
     var listingID = Number(this.props.params.index);
-    console.log('listingID', listingID);
+    // console.log('listingID', listingID);
     var stateObj = store.getState();
     console.log('stateObj', stateObj);
-    var item = stateObj.name.find(function(item){
-      return item.listing_id === listingID;
-    });
 
-    console.log(item);
-    this.setState(item);
+    if (stateObj.name.length > 0) {
+      var item = stateObj.name.find(function(item){
+        console.log('item', item);
+        return item.listing_id === listingID;
+      });
+      this.setState(item);
+      console.log('stateObj', stateObj.name.length)
+    }
+    else {
+      store.actions.load();
+      console.log('2nd load?')
+      this.listeningFunc = (state) => {
+        var item = state.name.find(function(item){
+          return item.listing_id === listingID;
+        });
+        this.setState(item);
+      }
+      store.addListener(this.listeningFunc);
+    }
+
+    // var item = stateObj.name.find(function(item){
+    //   return item.listing_id === listingID;
+    // });
+
+    // console.log(item);
+    // this.setState(item);
   }
+
+  componentWillUnmount(){
+    store.removeListener(this.listeningFunc);
+  }
+
 
 
   render() {

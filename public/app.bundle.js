@@ -21534,7 +21534,7 @@
 	              { className: "home" },
 	              _react2.default.createElement(
 	                "a",
-	                { href: "http://localhost:5000/#/" },
+	                { target: "_blank", href: "http://localhost:5000/#/" },
 	                "Home"
 	              )
 	            ),
@@ -21543,7 +21543,7 @@
 	              { className: "favorites" },
 	              _react2.default.createElement(
 	                "a",
-	                { href: "https://www.etsy.com/people/Graymalkyn/favorites?ref=hdr" },
+	                { target: "_blank", href: "https://www.etsy.com/people/Graymalkyn/favorites?ref=hdr" },
 	                "Favorites"
 	              )
 	            ),
@@ -21552,7 +21552,7 @@
 	              { className: "your-shop" },
 	              _react2.default.createElement(
 	                "a",
-	                { href: "https://www.etsy.com/shop/Graymalkyn?ref=hdr_shop_menu" },
+	                { target: "_blank", href: "https://www.etsy.com/shop/Graymalkyn?ref=hdr_shop_menu" },
 	                "My Etsy Shop"
 	              )
 	            ),
@@ -21561,7 +21561,7 @@
 	              { className: "cart" },
 	              _react2.default.createElement(
 	                "a",
-	                { href: "https://www.etsy.com/cart?ref=hdr" },
+	                { target: "_blank", href: "https://www.etsy.com/cart?ref=hdr" },
 	                "My Cart"
 	              )
 	            )
@@ -21613,22 +21613,36 @@
 	  function ProdList() {
 	    _classCallCheck(this, ProdList);
 	
-	    var _this = _possibleConstructorReturn(this, (ProdList.__proto__ || Object.getPrototypeOf(ProdList)).call(this));
+	    console.log('step 1');
 	
-	    _prodStore2.default.actions.load();
+	    var _this = _possibleConstructorReturn(this, (ProdList.__proto__ || Object.getPrototypeOf(ProdList)).call(this));
 	
 	    _this.state = _prodStore2.default.getState();
 	
-	    var self = _this;
-	
-	    _prodStore2.default.addListener(function (state) {
-	      // console.log('changed', state)
-	      self.setState(state);
-	    });
 	    return _this;
 	  }
 	
 	  _createClass(ProdList, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      var _this2 = this;
+	
+	      console.log('step2', this.state);
+	      _prodStore2.default.actions.load();
+	      // var self = this;
+	
+	      this.listeningFunc = function (state) {
+	        _this2.setState(state);
+	      };
+	
+	      _prodStore2.default.addListener(this.listeningFunc);
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      _prodStore2.default.removeListener(this.listeningFunc);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	
@@ -21706,6 +21720,7 @@
 	'use strict';
 	
 	var $ = __webpack_require__(175);
+	console.log('prod-store');
 	
 	var state = {
 	  name: []
@@ -21719,6 +21734,12 @@
 	
 	store.addListener = function (listener) {
 	  store.listeners.push(listener);
+	};
+	
+	store.removeListener = function (listener) {
+	  var index = store.listeners.indexOf(listener);
+	  console.log('store index', index);
+	  store.listeners.splice(index, 1);
 	};
 	
 	store.change = function () {
@@ -21736,12 +21757,16 @@
 	
 	store.actions.load = function () {
 	  // console.log('window', window);
+	  if (state.name.length > 0) {
+	    store.change();
+	    return;
+	  }
 	
 	  $.ajax({
 	    url: '/api/users/shopListings',
 	    method: 'GET'
 	  }).done(function (data) {
-	    // console.log('data', data);
+	    console.log('data', data);
 	    data.results.forEach(function (newListing) {
 	      state.name.push(newListing);
 	    });
@@ -37519,16 +37544,43 @@
 	  _createClass(Detail, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
+	      var _this2 = this;
+	
 	      var listingID = Number(this.props.params.index);
-	      console.log('listingID', listingID);
+	      // console.log('listingID', listingID);
 	      var stateObj = _prodStore2.default.getState();
 	      console.log('stateObj', stateObj);
-	      var item = stateObj.name.find(function (item) {
-	        return item.listing_id === listingID;
-	      });
 	
-	      console.log(item);
-	      this.setState(item);
+	      if (stateObj.name.length > 0) {
+	        var item = stateObj.name.find(function (item) {
+	          console.log('item', item);
+	          return item.listing_id === listingID;
+	        });
+	        this.setState(item);
+	        console.log('stateObj', stateObj.name.length);
+	      } else {
+	        _prodStore2.default.actions.load();
+	        console.log('2nd load?');
+	        this.listeningFunc = function (state) {
+	          var item = state.name.find(function (item) {
+	            return item.listing_id === listingID;
+	          });
+	          _this2.setState(item);
+	        };
+	        _prodStore2.default.addListener(this.listeningFunc);
+	      }
+	
+	      // var item = stateObj.name.find(function(item){
+	      //   return item.listing_id === listingID;
+	      // });
+	
+	      // console.log(item);
+	      // this.setState(item);
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      _prodStore2.default.removeListener(this.listeningFunc);
 	    }
 	  }, {
 	    key: 'render',
