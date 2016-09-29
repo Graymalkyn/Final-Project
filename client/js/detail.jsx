@@ -64,7 +64,7 @@ class Detail extends React.Component {
           <div className="description"><strong>Description:</strong> {this.state.description}</div>
         </div>
         <div className="detail-right-column">
-          <a href="http://https://mark-shuler-etsy.herokuapp.com/"><div className="back-link">Back to Selection Page</div></a>
+          <a href="http://https://mark-shuler-etsy.herokuapp.com/#/"><div className="back-link">Back to Selection Page</div></a>
           <div className="title"><strong>Title:</strong> {this.state.title} </div>
           <div className="listing-id">Listing ID#: {this.state.listing_id}</div>
           <div className="price"><strong>Price:</strong> ${this.state.price}</div>
