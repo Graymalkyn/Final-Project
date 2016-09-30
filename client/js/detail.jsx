@@ -52,10 +52,6 @@ class Detail extends React.Component {
       return (<div>Loading item...</div>)
     }
 
-    // if (this.state.who_made === "i_did") {
-    //   changeText.who_made("I made this item.");
-    // }
-
 
     return (
       <div className="detail-container">
@@ -66,7 +62,7 @@ class Detail extends React.Component {
         <div className="detail-right-column">
           <a href="https://mark-shuler-etsy.herokuapp.com/#/"><div className="back-link">Back to Selection Page</div></a>
           <div className="title"><strong>Title:</strong> {this.state.title} </div>
-          <div className="listing-id">Listing ID#: {this.state.listing_id}</div>
+          <div className="listing-id"><strong>Listing ID#:</strong> {this.state.listing_id}</div>
           <div className="price"><strong>Price:</strong> ${this.state.price}</div>
           <div><strong>Currency Type:</strong> {this.state.currency_code}</div>
           <div><strong>Who Made this item?</strong> {this.state.who_made}</div>

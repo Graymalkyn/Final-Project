@@ -27,12 +27,13 @@ header h1 {
   font-size: 1.5em;
   font-weight: bold;
   margin-top: 20px;
+  height: 75px;
 }
 
 .price {
   font-size: 1.3em;
   font-weight: bold;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .description {
@@ -116,7 +117,7 @@ header li a:hover {
   margin: 15px 5px;
   background-color: rgba(251, 251, 249, 1.0);
   width: 47%;
-  height: 424px;
+  height: 502px;
   float: left;
 }
 
@@ -150,8 +151,8 @@ header li a:hover {
 .prod-list-item .title {
   height: 19px;
   line-height: 1.5em;
-  text-overflow: ellipsis;
   overflow: auto;
+  height: 75px;
 }
 
 
@@ -285,5 +286,20 @@ footer img {
   header {
     margin: 0;
   }
+
+  .prod-list-item .description {
+    margin: 20px 10px;
+    height: auto;
+    text-overflow: ellipsis;;
+    overflow: auto;
+  }
+
+  .prod-list-item .title {
+    height: 19px;
+    line-height: 1.5em;
+    overflow: auto;
+    height: auto;
+  }
+
 
 }

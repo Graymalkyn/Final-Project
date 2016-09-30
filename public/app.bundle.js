@@ -37594,11 +37594,6 @@
 	        );
 	      }
 	
-	      // if (this.state.who_made === "i_did") {
-	      //   changeText.who_made("I made this item.");
-	      // }
-	
-	
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'detail-container' },
@@ -37649,7 +37644,12 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'listing-id' },
-	            'Listing ID#: ',
+	            _react2.default.createElement(
+	              'strong',
+	              null,
+	              'Listing ID#:'
+	            ),
+	            ' ',
 	            this.state.listing_id
 	          ),
 	          _react2.default.createElement(
